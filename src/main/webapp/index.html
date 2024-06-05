@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIET Exam Management Portal</title>
+    <style>
+        /* Global Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0; /* light gray background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        /* Container Styles */
+       .container {
+            background: #fff; /* white background */
+            padding: 20px;
+            border: 1px solid #ced4da; /* light gray border */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* subtle shadow */
+            max-width: 800px;
+            width: 100%;
+            text-align: center; /* center the form */
+            animation: fadeIn 0.5s ease-in-out; /* fade in animation */
+        }
+        
+        /* Heading Styles */
+       .heading {
+            font-size: 36px;
+            font-weight: bold;
+            color: #343a40; /* dark gray text */
+            margin-bottom: 20px;
+            animation: slideIn 0.5s ease-in-out; /* slide in animation */
+        }
+        
+        /* Form Group Styles */
+       .form-group {
+            margin-bottom: 20px;
+            transition: background-color 0.2s ease-in-out; /* smooth background color transition */
+        }
+        
+       .form-group:hover {
+            background-color: #f7f7f7; /* light gray background on hover */
+        }
+        
+        /* Button Styles */
+        button[type="submit"] {
+            background-color: #007bff; /* blue background */
+            color: #fff; /* white text */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out; /* smooth background color transition */
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* darker blue background on hover */
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">KIET Exam Management Portal</h1>
+        
+        <!-- Add Student Form -->
+        <div class="form-group">
+            <form action="addStudent.jsp">
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+        
+        <!-- Modify Student Form -->
+        <div class="form-group">
+            <form action="modifyStudent.jsp">
+                <button type="submit">Modify Student</button>
+            </form>
+        </div>
+
+        <!-- Delete Student Form -->
+        <div class="form-group">
+            <form action="deleteStudent.jsp">
+                <button type="submit">Delete Student</button>
+            </form>
+        </div>
+
+        <!-- Mark Attendance Form -->
+        <div class="form-group">
+            <form action="addAttendance.jsp">
+                <button type="submit">Mark Attendance</button>
+            </form>
+        </div>
+
+        <!-- Set Eligibility Criteria Form -->
+        <div class="form-group">
+            <form action="setEligibility.jsp">
+                <button type="submit">Set Criteria</button>
+            </form>
+        </div>
+
+        <!-- Check Eligibility Form -->
+        <div class="form-group">
+            <form action="checkEligibility.jsp">
+                <button type="submit">Check Eligibility</button>
+            </form>
+        </div>
+
+        <!-- Display Student Records -->
+        <div class="form-group">
+            <form action="PrintAllRecordsServlet" method="get">
+                <button type="submit">Fetch All Records</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Add event listeners to buttons
+        const buttons = document.querySelectorAll('button[type="submit"]');
+        buttons.forEach(button => {
+            button.addEventListener('mouseover', () => {
+                button.classList.add('hover');
+            });
+            button.addEventListener('mouseout', () => {
+                button.classList.remove('hover');
+            });
+        });
+    </script>
+</body>
+</html>
